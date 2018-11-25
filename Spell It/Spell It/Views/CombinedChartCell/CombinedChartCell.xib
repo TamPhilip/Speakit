@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CombinedChartCell" customModule="Spell_It" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="246"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="190" height="246"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CnK-WR-z6P" customClass="CombinedChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="190" height="246"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="CnK-WR-z6P" secondAttribute="trailing" id="6jf-TL-lbL"/>
+                <constraint firstItem="CnK-WR-z6P" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="DxK-sh-tbb"/>
+                <constraint firstItem="CnK-WR-z6P" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EiD-iI-CVK"/>
+                <constraint firstAttribute="bottom" secondItem="CnK-WR-z6P" secondAttribute="bottom" id="SbR-0z-p4A"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="190" height="246"/>
+            <connections>
+                <outlet property="combinedChartView" destination="CnK-WR-z6P" id="GAW-cA-SO9"/>
+            </connections>
+            <point key="canvasLocation" x="-59.200000000000003" y="136.73163418290855"/>
+        </collectionViewCell>
+    </objects>
+</document>

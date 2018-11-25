@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LineGraphCell" customModule="Spell_It" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="186" height="220"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="186" height="220"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-Gg-iOc" customClass="LineChartView" customModule="Charts">
+                        <rect key="frame" x="0.0" y="0.0" width="186" height="220"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="2hC-Gg-iOc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1OZ-N8-7iR"/>
+                <constraint firstAttribute="bottom" secondItem="2hC-Gg-iOc" secondAttribute="bottom" id="4Ch-A6-RBZ"/>
+                <constraint firstAttribute="trailing" secondItem="2hC-Gg-iOc" secondAttribute="trailing" id="OLZ-XY-uDF"/>
+                <constraint firstItem="2hC-Gg-iOc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Wa0-Io-2Ia"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="186" height="220"/>
+            <connections>
+                <outlet property="lineChartView" destination="2hC-Gg-iOc" id="ueK-Ld-OrS"/>
+            </connections>
+            <point key="canvasLocation" x="28.800000000000001" y="215.8920539730135"/>
+        </collectionViewCell>
+    </objects>
+</document>
