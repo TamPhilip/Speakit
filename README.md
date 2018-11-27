@@ -11,7 +11,7 @@ Timeline allows the user to track their progress with graphs that visualizes the
 ![Alt text](Timeline.jpeg?raw=true "Timeline Tab")
 
 ### To Try:
-- Change the Google API Key / Google Files 
+- Add a Google API Key (Google Cloud) / GoogleServices.plist (Firebase) 
 
 - In Terminal run inside ./Spell\ It:
 ```
