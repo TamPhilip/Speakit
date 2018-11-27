@@ -1,4 +1,5 @@
-APIKEY.swift
-GoogleService-Info.plist
+**/APIKEY.swift
+**/GoogleService-Info.plist
 Pods/
 .DS_Store
+**/Spell It.xcworkspace
