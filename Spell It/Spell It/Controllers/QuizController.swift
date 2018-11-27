@@ -174,10 +174,10 @@ class QuizController: UIViewController {
     func getSpeechText() -> String {
         if quizType == .alphabet  && index == 0 {
             var toRemove = currentText
-            return String(toRemove.removeLast())
+            return String(toRemove.removeLast()).lowercased()
         } else {
             print(currentText)
-            return currentText
+            return currentText.lowercased()
         }
     }
 }

@@ -195,7 +195,6 @@
 		1C1839ED21A916690071B390 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1CFD04EB21AAC745009101B3 /* Histogram */,
 				1C160AA721AA796E00F8BD22 /* Line Graph */,
 				1C160A9621AA1D3D00F8BD22 /* BarChartCell */,
 				1C160A9521AA1D3500F8BD22 /* CombinedChartCell */,
@@ -214,13 +213,6 @@
 				1C183A0821A9BA620071B390 /* QuizCell.xib */,
 			);
 			path = QuizCell;
-			sourceTree = "<group>";
-		};
-		1CFD04EB21AAC745009101B3 /* Histogram */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Histogram;
 			sourceTree = "<group>";
 		};
 		914358295583AF92B44DDD67 /* Pods */ = {
@@ -568,7 +560,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spellit.Spell-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spellit.Speakit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -588,7 +580,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.spellit.Spell-It";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spellit.Speakit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -25,7 +25,7 @@ class LevelController: UIViewController, UICollectionViewDelegate, UICollectionV
         }
     }
     
-    @IBOutlet weak var changeAgeButton: FABButton!
+    @IBOutlet weak var changeAgeButton: FABButton! 
     
     var selectedTitle = "Alphabet"
     var type: Quiz = .alphabet

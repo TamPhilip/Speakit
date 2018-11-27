@@ -11,10 +11,14 @@ import ChameleonFramework
 import Charts
 import FirebaseFirestore
 
+public var mostRecentTry = "Article"
+public var countOfTry: Double = 1
 
 class GraphController: UIViewController {
     
     public var toSave = 0
+    
+    var toHide: Bool = false
     
     @IBOutlet weak var contentLabel: UILabel!
     
@@ -74,7 +78,7 @@ class GraphController: UIViewController {
 
 extension GraphController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -94,6 +98,25 @@ extension GraphController: UICollectionViewDelegate, UICollectionViewDataSource,
             return cell
         }
         else if indexPath.item == 1 {
+            let model = collectionView.dequeueReusableCell(withReuseIdentifier: "LineGraphCell", for: indexPath)
+            guard let cell = model as? LineGraphCell else {
+                return model
+            }
+            let newData = wordsLearned
+            
+            return setLineGraph(cell: cell, values: getValuesForLine(values: newData))
+        }
+//        else if indexPath.item == 2 {
+//            let model = collectionView.dequeueReusableCell(withReuseIdentifier: "BarChartCell", for: indexPath)
+//            guard let cell = model as? BarChartCell else {return model}
+//
+//            let newData = wordsLearned
+//
+//            setGroupedGraph(cell: cell)
+//
+//            return cell
+//        } else {
+        else {
             let model = collectionView.dequeueReusableCell(withReuseIdentifier: "CombinedChartCell", for: indexPath)
             guard let cell = model as? CombinedChartCell else {
                 return model
@@ -103,19 +126,6 @@ extension GraphController: UICollectionViewDelegate, UICollectionViewDataSource,
             
             return cell
         }
-        else if indexPath.item == 2 {
-            
-        } else {
-            
-        }
-        
-        let model = collectionView.dequeueReusableCell(withReuseIdentifier: "LineGraphCell", for: indexPath)
-        guard let cell = model as? LineGraphCell else {
-            return model
-        }
-        let newData = wordsLearned
-        
-        return setLineGraph(cell: cell, values: getValuesForLine(values: newData))
     }
     
     
@@ -235,7 +245,7 @@ extension GraphController {
     func setCombinedChart(cell: CombinedChartCell) {
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         print("Here")
-        let averageMonth : [Double] = [201, 195, 220, 203, 173, 180, 192, 160, 186, 150, 160, 140 + Double(toSave) / 3]
+        let averageMonth : [Double] = [201, 195, 220, 203, 173, 180, 190, 160, 186, 150, 160, 140 + Double(toSave) / 3]
         let yourMonth : [Double] = [220, 184, 230, 170, 160, 201, 195, 155, 201, 130, 170, 130 + Double(toSave)]
         
         var averageData : [ChartDataEntry] = []
@@ -255,6 +265,8 @@ extension GraphController {
 //        averageSet.
         averageSet.setColor(UIColor.flatForestGreen())
         averageSet.setCircleColor(UIColor.flatForestGreen())
+        averageSet.circleRadius = 3
+        averageSet.circleHoleRadius = 2
         var yourSet = BarChartDataSet(values: yourData, label: "Total number of correct words per month")
         yourSet.setColor(UIColor.flatSkyBlue())
         print(yourSet.values)
@@ -267,6 +279,7 @@ extension GraphController {
         cell.combinedChartView.xAxis.enabled = true
         cell.combinedChartView.xAxis.labelPosition = .bottom
         cell.combinedChartView.xAxis.axisMinimum = 0
+        cell.combinedChartView.xAxis.valueFormatter = MonthFormatter()
         cell.combinedChartView.backgroundColor = UIColor.white
         cell.combinedChartView.xAxis.axisRange = 12
         cell.combinedChartView.pinchZoomEnabled = true
@@ -348,6 +361,49 @@ extension GraphController {
     }
     
 }
+
+//MARK: Most Common Error Graph
+
+extension GraphController {
+//    func setGroupedGraph(cell: BarChartCell) {
+//        let attempts: [Double] = [4, 2, 6, countOfTry]
+//
+//        let number = Int.random(in: 1 ... 5)
+//        let averageAttempt: [Double] = [2, 2, 3, Double(number)]
+//
+//        var attempsDataEntries: [BarChartDataEntry] = []
+//        var averageDataEntries: [BarChartDataEntry] = []
+//        print("HERE")
+//        for i in 0...3 {
+//            let averageCharDataEntry = BarChartDataEntry(x: Double(i), y: attempts[i])
+//            let attemptCharDataEntry = BarChartDataEntry(x: Double(i), y: averageAttempt[i])
+//
+//            attempsDataEntries.append(averageCharDataEntry)
+//            averageDataEntries.append(attemptCharDataEntry)
+//        }
+//print("HERE")
+//        let groupSpace: Double = 1
+//        let barSpace: Double  = 1
+//        let barWidth = 0.5
+//
+//        print("HERE")
+//        print(attempsDataEntries)
+//        print(averageDataEntries)
+//        var barDataSetAttempts = BarChartDataSet(values:attempsDataEntries , label: "Average Attempts")
+//        barDataSetAttempts.setColor(UIColor.blue)
+//        print("HERE")
+//        var barDataSetAverage = BarChartDataSet(values: averageDataEntries, label: "Number of Attempts until correct")
+//        barDataSetAverage.setColor(UIColor.red)
+//        print("HERE")
+//        var barData = BarChartData(dataSets: [barDataSetAttempts, barDataSetAverage])
+//
+//        barData.barWidth = barWidth
+//        barData.groupBars(fromX: 0, groupSpace: groupSpace, barSpace: barSpace)
+//        cell.barChart.data = barData
+//        cell.barChart.xAxis.axisRange = 5
+//    }
+}
+
 
 extension Date {
     func dayOfWeek() -> String? {
