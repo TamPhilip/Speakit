@@ -13,6 +13,7 @@ class ReadController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
+    // Play button will then be 
     @IBOutlet weak var playButton: UIButton! {
         didSet {
             playButton.imageView?.contentMode = .scaleAspectFit
@@ -23,6 +24,8 @@ class ReadController: UIViewController {
             
         }
     }
+    
+    // Round the button
     @IBOutlet weak var recordButton: UIButton! {
         didSet {
              recordButton.imageView?.contentMode = .scaleAspectFit
@@ -31,6 +34,7 @@ class ReadController: UIViewController {
         }
     }
     
+    // Setup the Shadows for all fo the views)
     @IBOutlet var shadowCollection: [UIView]!
     
     func setupShadow() {
@@ -49,6 +53,7 @@ class ReadController: UIViewController {
     
     var index = 0
     
+    // Questions (NOT GOOD BUT FOR DEMO)
     var questions: [String] = ["""
         Once upon a time in a small village lived four Brahmins named Alice, Bob, Mike and Joey. They had grown up together to become good friends. Alice, Bob and Mike were very knowledgeable. But Joey spent most of his time eating and sleeping. He was considered foolish by everyone.
 

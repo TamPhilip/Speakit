@@ -13,6 +13,7 @@ class SpeechService: NSObject, AVAudioPlayerDelegate {
     private var player: AVAudioPlayer?
     private var completionHandler: (() -> Void)?
     
+    // Setup the audio session
     func setupSession() {
         do {
             let audioSession = AVAudioSession.sharedInstance()

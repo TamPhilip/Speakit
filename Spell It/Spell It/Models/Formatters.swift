@@ -9,6 +9,7 @@
 import Foundation
 import Charts
 
+// Format the x axis
 class BarChartXAxisFormatter: IAxisValueFormatter {
     
     var dayOfWeeks: [Int]
@@ -42,7 +43,7 @@ class BarChartXAxisFormatter: IAxisValueFormatter {
     }
 }
 
-
+// Format the X axis
 class LineXAxisFormatter: IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
@@ -69,7 +70,7 @@ class LineXAxisFormatter: IAxisValueFormatter {
     }
 }
 
-
+// Format's the month based on their int value
 class MonthFormatter: IAxisValueFormatter {
     
     func stringForValue(_ value: Double, axis: AxisBase?) -> String {
@@ -106,7 +107,7 @@ class MonthFormatter: IAxisValueFormatter {
 }
 
 
-
+// BarChartValue Formatter
 class BarChartValueFormatter: IValueFormatter {
     func stringForValue(_ value: Double, entry: ChartDataEntry, dataSetIndex: Int, viewPortHandler: ViewPortHandler?) -> String {
         return String(Int(value))

@@ -8,8 +8,9 @@
 
 import Foundation
 
+// Data for Quizzing
 class QuizData {
-    
+    // Gets the case of each alphabet
     func getQuestions(index: Int, quiz: Quiz) -> [String] {
         switch quiz {
         case .alphabet :
