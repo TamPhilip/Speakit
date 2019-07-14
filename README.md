@@ -18,5 +18,5 @@ Timeline allows the user to track their progress with graphs that visualizes the
 pod install
 ```
 
-### Speakit was developped in 36 hours for the HackWestern 5 Hackathon.
+### Speakit was developped for the HackWestern 5 Hackathon.
 https://devpost.com/software/spellit
